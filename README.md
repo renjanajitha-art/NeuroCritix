@@ -1,7 +1,7 @@
 # NeuroCritix
 **Early Detection of Neurodegenerative Stress via Brain Criticality & EEG Complexity**
 
-**Author:** [Rejitha Renjan] *(Independent Researcher | MSc Zoology)*  
+**Author:** Rejitha Renjan *(Independent Researcher | MSc Zoology)*  
 **Live Interactive Prototype:** [Launch NeuroCritix App]([https://towering-neuro-scan-pulse.base44.app])  
 **Status:** Research & Educational Prototype (November 2026)
 
