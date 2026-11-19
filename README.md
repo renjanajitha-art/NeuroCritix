@@ -49,6 +49,8 @@ $$\frac{dx}{dt} = -x^3 + x + r + \sigma \xi(t)$$
 * **Learn:** Plain-language educational library with scientific references.
 
 **Tech Stack:** React, Tailwind CSS, Recharts, Three.js, Base44.
+[![DOI](https://zenodo.org)](https://doi.org)
+
 
 ---
 
