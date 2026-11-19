@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use or reference this prototype, please cite it as below."
+authors:
+  - family-names: "Renjan"
+    given-names: "Rejitha"
+title: "NeuroCritix: Early Detection of Neurodegenerative Stress via Brain Criticality & EEG Complexity"
+version: 1.0.0
+date-released: 2026-11-19
+url: "https://github.com/renjanajitha-art/NeuroCritix"
