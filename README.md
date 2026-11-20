@@ -38,6 +38,32 @@ $$\frac{dx}{dt} = -x^3 + x + r + \sigma \xi(t)$$
 * **$r$**: Systemic load parameter (range $-0.5$ to $0.5$).
 * **Critical Tipping Point ($R_{CRITICAL}$):** $\frac{2}{3\sqrt{3}} \approx 0.385$.
 * **Hysteresis:** Perturbations below $R_{CRITICAL}$ (e.g., $r = 0.25$) remain reversible, whereas exceeding $R_{CRITICAL}$ (e.g., $r = 0.45$) eliminates the healthy attractor state, causing permanent collapse even after load decreases.
+* ---
+
+## Empirical Validation Results (OpenNeuro Cohort `ds004504`, *n* = 65)
+To validate the theoretical framework on real human electrophysiology, the four NeuroCritix dynamical biomarkers were evaluated on preprocessed resting-state EEG recordings from **65 age-matched subjects** (**36 Alzheimer's Disease [AD]** vs. **29 Healthy Controls [HC]**) sourced from OpenNeuro (`ds004504`, posterior/temporal channels `P3, P4, Pz, O1, O2, T5, T6`).
+
+### 1. Group-Level Statistical Discrimination (Mann-Whitney *U* Test)
+All four nonlinear criticality and complexity metrics achieved statistically significant separation (*p* < 0.05) between Healthy Controls and Alzheimer's patients:
+
+| Biomarker Metric | Healthy Control (*n* = 29) | Alzheimer's AD (*n* = 36) | *p*-value | Single-Marker ROC-AUC |
+| :--- | :---: | :---: | :---: | :---: |
+| **Aperiodic 1/*f* Slope ($\beta$, 15–40 Hz)** | **2.4624** | **1.9163** | **0.00038** | **0.759** |
+| **DFA Envelope (Alpha-Beta 8–30 Hz)** | **1.0747** | **1.0205** | **0.00165** | **0.729** |
+| **Shannon Spectral Entropy (8–30 Hz)** | **0.4268** | **0.4625** | **0.00362** | **0.712** |
+| **Lempel-Ziv Complexity (8–30 Hz)** | **0.2805** | **0.2961** | **0.02403** | **0.664** |
+
+* **Clinical Cognitive Correlation:** Higher DFA long-range temporal correlation (`DFA_Envelope`) correlated significantly with clinical Mini-Mental State Examination (`MMSE`) scores across the cohort (*Spearman r* = **0.344**, *p* = **0.00504**).
+
+### 2. Multi-Biomarker AI Classification (5-Fold Stratified Cross-Validation)
+Combining all four empirically validated biomarkers into a **Random Forest** ensemble classifier yielded **`ROC-AUC = 0.802`**, outperforming every individual marker alone (`0.759` peak single-marker AUC) and confirming multi-dimensional criticality breakdown in neurodegeneration.
+
+![NeuroCritix Multi-Biomarker AI ROC Curve](NeuroCritix_AI_Classifier_ROC.png)
+
+![NeuroCritix Full 65-Subject DFA Distribution](NeuroCritix_Full65_Figure.png)
+
+*Full subject-level empirical metrics are archived in [`NeuroCritix_Full65_Validated.xlsx`](NeuroCritix_Full65_Validated.xlsx).*
+
 
 ---
 
